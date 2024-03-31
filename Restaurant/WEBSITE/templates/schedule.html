@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+<center>
+    <strong><h3>Reservation has been received!</h3></strong>
+</center>
+<br>
+
+<div class="info mx-auto" style="width: 300px;">
+{% for field in form %}
+
+<p><strong>{{ field.label }}:</strong> {{ field.value }}</p>
+
+{% endfor %}
+
+
+<form method="post">
+{% csrf_token %}
+    <button class="btn btn-secondary" type="submit">Done</button>
+
+</form>
+</div>
+</div>
+
+{% endblock %}

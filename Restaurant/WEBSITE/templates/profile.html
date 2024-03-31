@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="row py-5 px-2">
+    <div class="profile-information col-4 " style="width: 90vmin;">
+        <h3>Profile</h3>
+        <hr>
+        <ul>
+            <li><strong>Username :</strong> {{request.user.username}}</li><br>
+            <li><strong>First name :</strong> {{request.user.first_name}}</li><br>
+            <li><strong>Last name :</strong> {{request.user.last_name}}</li><br>
+            <li><strong>Email address :</strong> {{request.user.email}}</li><br>
+            <li><strong>ID :</strong> {{request.user.id}}</li>
+        </ul>
+        <div class="row col-md-12" style="justify-content: space-evenly; display: inline;">
+        <a class="btn btn-secondary col-sm-6 my-3" type="submit" href="{% url 'update_user' %}">Update information</a>
+        <a class="btn btn-danger col-sm-6" type="submit" onclick="return confirm('Are you sure to DELETE this account?')" href="{% url 'delete_user' request.user.id %}">Delete account</a>
+        </div>
+    </div>
+
+<div class="card" id="profilecard" style="width: 45vmin; background-color: transparent;">
+{% for x in reserved_table %}
+{% if request.user == x.created_by %}
+<div class="card-body">
+    <h5 class="card-title">{{x.type_of_celebration}}</h5>
+    <ul>
+        <li class="pb-2"><strong>Name : </strong>{{ x.name }}</li>
+        <li class="pb-2"><strong>Event date : </strong>{{ x.your_date }}</li>
+        <li class="pb-2"><strong>Time : </strong>{{ x.your_time }}</li>
+        <li class="pb-2"><strong>Number of persons : </strong>{{ x.number_of_person }}</li>
+        <li class="pb-2"><strong>Celebration : </strong>{{ x.type_of_celebration }}</li>
+        <li class="pb-2"><strong>Created by : </strong>{{ x.created_by }}</li>
+        <li class="pb-2"><strong>Reference number : </strong><br>{{ x.random_number }}</li>
+    </ul>
+        <a class="btn btn-danger col-sm-6" type="submit" onclick="return confirm('Are you sure to DELETE this account?')" href="{% url 'delete_reserve' x.random_number %}">Delete</a>
+</div>  
+{% endif %}
+{% endfor %}
+
+</div>
+</div>
+</div>
+{% endblock %}

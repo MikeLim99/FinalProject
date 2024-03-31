@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<section>
+<div class="container py-5">
+    <form method="post">
+        {% csrf_token %}
+    <div class="row mx-5 px-5">
+        <h2 class="text-center pb-2">Please fill out the form!</h2>
+        <hr>
+        <div class="col-md-4 pb-2">
+            <div class="form-group">
+                <label for="name">Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" placeholder="Your name" name="name" required>
+            </div>
+        </div>
+        <div class="col-md-4 pb-2">
+            <div class="form-group">
+                <label for="phone number">Phone number <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" placeholder="Phone number" name="phone" maxlength="11" minlength="11" required>
+            </div>
+        </div>
+        <div class="col-md-4 pb-2">
+            <div class="form-group">
+                <label for="email address">Email address <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" placeholder="Email address" name="email" required>
+            </div>
+        </div>
+        <div class="col-md-4 pb-2">
+            <div class="form-group">
+                <label for="time">Time <span class="text-danger">*</span></label>
+                <select name="your_time" class="form-control">
+                    <option value="Choose your time">Choose your time schedule</option>
+                    <option value="9AM to 11:30AM">9AM to 11:30AM</option>
+                    <option value="12NN to 2:30PM">12NN to 2:30PM</option>
+                    <option value="3PM to 5:30PM">3PM to 5:30PM</option>
+                    <option value="6PM to 8:30PM">6PM to 8:30PM</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4 pb-2">
+            <div class="form-group">
+                <label for="date">Start date <span class="text-danger">*</span></label>
+                <input type="date" class="form-control" id="your_date" name="your_date" placeholder="date" required>
+            </div>
+        </div>
+        <div class="col-md-4 pb-2">
+            <div class="form-group">
+                <label for="start-date">Type of celebration <span class="text-danger">*</span></label>
+                <select name="type_of_celebration" class="form-control">
+                    <option value="Normal Celebration">Normal Celebration</option>
+                    <option value="Birthday">Birthday</option>
+                    <option value="Wedding">Wedding</option>
+                    <option value="Reunion">Reunion</option>
+                    <option value="Gender reveal">Gender reveal</option>
+                </select>
+            </div>
+        </div>
+        <center>
+        <div class="col-md-2 pb-2">
+            <div class="form-group">
+                <label for="packs">No. of person<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" placeholder="No. of persons" name="number_of_person" maxlength="3" required>
+            </div>
+        </div>
+        </center>
+        {% if user.is_authenticated %}
+        <div class="col-md-12 py-5 text-center">
+            <button class="btn btn-secondary" type="submit" onclick="return confirm('Done reviewing your information?')">Schedule</button>
+        </div>
+        {% else %}
+        <div class="col-md-12 py-5 text-center">
+            <button class="btn btn-secondary" type="submit" disabled>Schedule</button>
+            <div><strong>Note: </strong><span class="text-danger">You need to be registered first!</span></div>
+        </div>
+        {% endif %}
+    </div>
+    </form>
+</div>
+</section>
+
+{% endblock %}

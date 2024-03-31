@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Header-->
+
+  <div class="header-content">
+    <div class="header-message">
+      <div class="message-home">
+        <h1><span>Discover Culinary Bliss 🍽️</span></h1>
+        <p id="message">At “Foods Delight,” we believe that every meal is an opportunity to create memories. Our passion lies in crafting exquisite dishes that tantalize your taste buds and warm your heart. Whether you’re celebrating a special occasion or simply craving a delightful meal, our restaurant is the perfect destination.</p>
+      </div>
+      </div>
+  </div>
+<section id="Menu-section">
+<center>
+    <h3 class="menu-header pt-5">Menu</h3>
+</center>
+<div class="container px-4 px-lg-5 mt-5">
+<div class="row row-cols-1 row-cols-md-4 g-4 pb-5 justify-content-center">
+    {% for product in products %}
+    <div class="col">
+      <div class="product-card card h-100">
+        <img src="{{product.image.url}}" height="250vmin" class="card-img-top" alt="...">
+        <div class="card-body">
+            <!--product name-->
+          <h5 class="card-title">{{product.name}}</h5>
+            <!--product price-->
+            ₱{{product.price|floatformat:2}}
+            <!--product description if any-->
+          <p class="card-text">Description: </p>
+          <p class="card-text">{{product.description}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</section>
+
+{% endblock %}
+

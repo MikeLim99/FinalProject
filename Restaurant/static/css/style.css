@@ -1,0 +1,137 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.bg-custom {
+    background-color: #362417;
+}
+
+.header-content{
+    background-image: url("/static/assets/bgfoods.jpg");
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    height: 500px;
+    overflow: hidden;
+}
+.header-message {
+    position: absolute;
+    transform: translate(-50%, -50);
+    text-align: center;
+    top: 25%;
+}
+
+.message-home{
+    background-color: #f1dabf9f;
+    max-width: 100%;
+    font-size: 4vmin;
+}
+
+
+.nav-item .nav-link {
+    color: #f1dabf;
+}
+
+.container-fluid .navbar-brand {
+    color: #f1dabf;
+}
+ul .nav{
+    width: 30rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+li {
+    list-style: none;
+    position: relative;
+}
+
+li::before {
+    content: "";
+    background-color: #f1dabf;
+    position: absolute;
+    left: 0;
+    bottom: 0.1rem;
+    height: 3px;
+    width: 0;
+    transition: 0.3s ease-in-out;
+}
+
+li:hover::before{
+    content: "";
+    background-color: #f1dabf;
+    position: absolute;
+    left: 0;
+    bottom: 0.1rem;
+    height: 3px;
+    width: 100%;
+    
+}
+
+.nav-item .nav-link:hover {
+    color: #92817a;
+}
+
+.container-fluid .navbar-brand:hover {
+    color: #92817a;
+}
+
+.menu-header {
+    border-bottom: #04030f 1px solid;
+    width: 15vw;
+    font-size: 5vmin;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.product-card {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bg-custom .navbar-toggler{
+    background-color: #f1dabf;
+    color: transparent;
+}
+
+.container .info {
+    border: 1px solid;
+    padding: 30px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.row .profile-information {
+    border: 1px solid;
+    padding: 30px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 10vmin;
+    height: fit-content;
+}
+
+#profilecard {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 20vmin;
+}
+
+.empty_schedule {
+    text-align: center;
+    padding-top: 50%;
+}
+
+.empty_schedule .message_string {
+    border: #04030f 0.2px solid;
+    margin: 10px;
+    padding: 10px;
+}
+
+.profile-information .feedback_form {
+    margin-left: 10%;
+}
+
+
