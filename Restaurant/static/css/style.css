@@ -37,8 +37,6 @@
     color: #f1dabf;
 }
 ul .nav{
-    width: 30rem;
-    display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -108,30 +106,34 @@ li:hover::before{
     padding: 30px;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-left: 10vmin;
     height: fit-content;
 }
 
 #profilecard {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-left: 20vmin;
-}
-
-.empty_schedule {
-    text-align: center;
-    padding-top: 50%;
-}
-
-.empty_schedule .message_string {
-    border: #04030f 0.2px solid;
-    margin: 10px;
-    padding: 10px;
-}
-
-.profile-information .feedback_form {
-    margin-left: 10%;
+    width: 370px;
 }
 
 
+@media (max-width: 600px) {
+    .header-content{
+        width: 100%;
+    }
+    .header-message {
+        position:relative;
+    }
+    .profile-information{
+        margin: auto;
+    }
+    #profilecard{
+        width: 100%;
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .row .btn {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
